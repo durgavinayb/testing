@@ -1,0 +1,12 @@
+{
+  "development": {
+    "service_url" : "NEED_TO_ADD",
+    "service_port" : 81,
+    "redis_url": "127.0.0.1",
+    "redis_port":6379,
+    "server_domain": "127.0.0.1",
+    "client_domain": "http://127.0.0.1:3001",
+    "minify" : false,
+    "static_root" : "/pages"
+  }
+}
