@@ -24,3 +24,38 @@
 .avatar {
    max-width: 80px
 }
+
+.cf-nav-main-header {
+    height: 75px;
+    background-color: #000;
+    border-radius: 0px;
+    &.navbar {
+      background-color: white;
+    }
+    .navbar-header img {
+        width: 115px;
+        height: 39px;
+        top: 17px;
+        position: relative;
+        padding: 0px;
+    }
+}
+
+.cf-nav-main-header.navbar {
+  background-color: white;
+}
+
+.cf-nav-main-header.navbar .navbar-header .navbar-brand{
+  margin-top: 10px;
+}
+
+@media(max-width:800px) {
+  .cf-nav-main-header > .container .navbar-collapse.collapse p {
+      margin-top: 4px;
+  }
+  .cf-nav-main-header {
+      min-height: 50px;
+      height: auto;
+      margin-bottom: 0px;
+  }
+}

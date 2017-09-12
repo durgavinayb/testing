@@ -17,7 +17,7 @@ export default class App extends React.Component<Props, {}> {
    public render() {
        return (
          <Provider store={store}>
-            <div className="container-fluid">
+            <div className="">
               <Header/>
                 {this.props.children}
               </div>
