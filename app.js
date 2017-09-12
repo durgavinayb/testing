@@ -53,7 +53,7 @@ app.use(session({
 }));
 
 // view engine setup
-app.set('views', path.join(__dirname, '/public/pages'));
+app.set('views', path.join(__dirname, '/'));
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.json({limit: '50mb', parameterLimit: 10000000}));
@@ -62,7 +62,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'), {maxAge: thirtyDay}));
+app.use(express.static(path.join(__dirname, 'dist'), {maxAge: thirtyDay}));
 app.use("/dist", express.static(__dirname +'/dist/'));
 
 requireFu(__dirname + '/routes')(app);
