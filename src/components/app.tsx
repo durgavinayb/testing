@@ -14,14 +14,16 @@ let store = createStore(
 );
 
 export default class App extends React.Component<Props, {}> {
-   public render() {
-       return (
-         <Provider store={store}>
-            <div className="">
-              <Header/>
-                {this.props.children}
-              </div>
-         </Provider>
-       );
+  public render() {
+    return (
+     <Provider store={store}>
+        <div className="">
+          <Header/>
+          <div className="c-body">
+            {this.props.children}
+          </div>
+        </div>
+     </Provider>
+    );
   }
 }

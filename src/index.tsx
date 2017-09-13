@@ -5,6 +5,7 @@ import App from './components/app.tsx';
 import * as _AboutPage from "./components/about/aboutPage";
 import * as _MemberPage from "./components/member/memberPage";
 import * as _MembersPage from "./components/members/membersPage";
+import * as _QuotePage from "./components/quote/main";
 
 type LoadCallback = (error: any, component: React.ComponentClass<any>) => void;
 
@@ -29,11 +30,19 @@ function loadMembersPage(location: any, callback: LoadCallback) {
     "MemberPages");
 }
 
+function loadQuotePage(location: any, callback: LoadCallback) {
+  require.ensure(
+    [],
+    () => callback(null, (require("./components/quote/main") as typeof _QuotePage).default),
+    "QuotePage");
+}
+
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route  path="/" component= {App} >
       <IndexRoute getComponent={ loadAboutPage } />
       <Route path="/about" getComponent={ loadAboutPage } />
+      <Route path="/quote" getComponent={ loadQuotePage } />
       <Route path="/members" getComponent={ loadMembersPage } />
       <Route path="/member" getComponent={ loadMemberPage } />
       <Route path="/memberEdit/:id" getComponent={ loadMemberPage } />
